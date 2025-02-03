@@ -18,7 +18,8 @@ preprocess = transforms.Compose([
 ])
 
 # image from local file
-image_path = "Data/test/large.cell.carcinoma/000108.png"
+# image_path = "Data/test/large.cell.carcinoma/000108.png"
+image_path = "Data/test/adenocarcinoma/000109 (4).png"
 image = Image.open(image_path).convert('RGB') 
 
 # preprocess the image
