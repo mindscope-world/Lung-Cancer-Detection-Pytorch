@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Prediction Result</title>
+</head>
+<body>
+    <h1>Prediction Result</h1>
+    
+    <!-- uploaded image -->
+    <div>
+        <h4>Uploaded Image:</h4>
+        <img src="{{ image_url }}" alt="Uploaded Image" style="max-width: 100%; height: auto;">
+    </div>
+
+    <!-- prediction results -->
+    <div>
+        <p><strong>Predicted Class:</strong> {{ predicted_class }}</p>
+        <h2>Probabilities:</h2>
+        <ul>
+            {% for class_name, prob in probabilities %}
+                <li>{{ class_name }}: {{ prob|floatformat:4 }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <!-- upload another image -->
+    <a href="{% url 'predict' %}">Upload Another Image</a>
+</body>
+</html>
